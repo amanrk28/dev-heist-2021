@@ -1,0 +1,74 @@
+@mixin phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+.cart-wrapper {
+  padding: 2rem;
+  @include phone {
+    padding: 12px;
+  }
+  .header {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    color: #2c3556;
+    padding: 1rem 0;
+  }
+  .table-wrapper {
+    li {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #ccc;
+      &:first-child {
+        background-color: #2c3556;
+        color: #fff;
+      }
+      > div {
+        flex: 1;
+        padding: 0 8px;
+      }
+      .name {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .image {
+        flex: 0.3;
+        display: flex;
+        align-items: center;
+        width: 100px;
+        &:not(.tableHeader) {
+          height: 100px;
+        }
+        img {
+          box-shadow: 0 0 8px #888;
+          border-radius: 8px;
+          height: 100px;
+          width: 100px;
+          object-fit: contain;
+        }
+      }
+      .delete {
+        flex: 0.3;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        img {
+          width: 30px;
+        }
+      }
+    }
+    .tableEmpty {
+      width: 100%;
+      height: 100%;
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 600;
+      margin: 5rem 0;
+    }
+  }
+}

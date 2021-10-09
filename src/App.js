@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home/Home.js";
+import Header from "./components/Header/Header";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
+import Cart from "./components/Cart/Cart";
+import "./App.scss";
 
 function App() {
+  const [cart, setCart] = useState([]);
+  const onAddToCart = (items) => {
+    setCart(items);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header cart={cart} />
+        <Switch>
+          <Route
+            path="/"
+            render={() => {
+              return <Home onAddToCart={onAddToCart} cart={cart} />;
+            }}
+            exact
+          />
+          <Route
+            path="/product/:id"
+            render={() => {
+              return <ProductDetail onAddToCart={onAddToCart} cart={cart} />;
+            }}
+          />
+          <Route
+            path="/cart"
+            render={() => {
+              return <Cart cart={cart} onChangeCart={onAddToCart} />;
+            }}
+            exact
+          />
+        </Switch>
+      </Router>
     </div>
   );
 }

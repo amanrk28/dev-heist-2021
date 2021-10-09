@@ -1,0 +1,92 @@
+@mixin phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+.productDetail-wrapper {
+  padding: 2rem;
+  display: flex;
+  @include phone {
+    flex-direction: column;
+  }
+  .image-container {
+    width: 400px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+    @include phone {
+      width: 100%;
+      margin: 1rem 0;
+    }
+    img {
+      width: 100%;
+    }
+    button {
+      border: none;
+      background-color: red;
+      border-radius: 4px;
+      margin: auto;
+      padding: 4px 8px;
+      color: #fff;
+    }
+  }
+  .productInfo {
+    margin-left: 3rem;
+    @include phone {
+      margin: 0;
+    }
+    > div {
+      padding: 1rem 0;
+    }
+    .name {
+      font-size: 32px;
+      font-weight: 600;
+      max-width: 500px;
+      @include phone {
+        font-size: 22px;
+        max-width: 100%;
+      }
+    }
+    .price {
+      font-size: 20px;
+      font-weight: 600;
+      color: #555;
+      @include phone {
+        font-size: 24px;
+      }
+    }
+    > p {
+      font-size: 22px;
+    }
+    .description {
+      list-style-type: disc;
+    }
+    .inCart-text {
+      cursor: pointer;
+      width: fit-content;
+      margin: 1rem 0;
+      border-radius: 4px;
+      font-size: 16px;
+      padding: 6px;
+      background-color: #00aa00;
+      color: #fff;
+      font-weight: 600;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: red;
+      border-radius: 4px;
+      margin: 2rem 0;
+      padding: 8px 12px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      @include phone {
+        width: 100%;
+      }
+    }
+  }
+}
