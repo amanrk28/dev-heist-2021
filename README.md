@@ -1,9 +1,8 @@
-# SSN Invente
+# SSN Invente: Dev Heist 2021
 
-## Dev Heist 2021
-
-## Name: Aman Khemka
+### Aman Khemka
 
 SSN College of Engineering
-B.Tech in IT
-3rd Year
+
+3rd Year, B.Tech in IT
+
