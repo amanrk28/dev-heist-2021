@@ -36,8 +36,12 @@
         white-space: nowrap;
         overflow: hidden;
       }
-      .image {
+      .price {
         flex: 0.3;
+        font-weight: 500;
+      }
+      .image {
+        flex: 0.2;
         display: flex;
         align-items: center;
         width: 100px;

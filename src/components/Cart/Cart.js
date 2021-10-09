@@ -56,7 +56,10 @@ const Cart = ({ cart, history, onChangeCart }) => {
                     {item.dataname === "image" ? (
                       <img src={cartItem.image} alt={cartItem.name} />
                     ) : (
-                      <div>{cartItem[item.dataname]}</div>
+                      <div>
+                        {item.dataname === "price" && <>&#8377;</>}
+                        {cartItem[item.dataname]}
+                      </div>
                     )}
                     {item.dataname === "delete" && (
                       <img
